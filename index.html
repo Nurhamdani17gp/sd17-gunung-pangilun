@@ -5,29 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pengumuman Kelulusan</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(to bottom right, #ffecec, #ffe6e6); margin: 0; padding: 0; }
-    header { background-color: #b3001b; color: white; text-align: center; padding: 40px 20px; border-bottom: 5px solid #ffb3b3; }
-    header h1 { margin: 0; font-size: 36px; }
-    header h2 { margin-top: 10px; font-size: 24px; }
-    header p { margin-top: 5px; font-size: 16px; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #ffecec, #ffe6e6);
+      margin: 0; padding: 0;
+    }
 
-    .section { max-width: 700px; margin: 30px auto; background: white; padding: 25px 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .section h3 { text-align: center; color: #b3001b; }
-    .countdown { display: flex; justify-content: center; gap: 15px; font-size: 20px; margin-top: 15px; }
-    .countdown div { background: #ff4d4d; color: white; padding: 12px 18px; border-radius: 10px; }
+    header {
+      background: linear-gradient(135deg, #b3001b, #ff4d4d);
+      color: white;
+      text-align: center;
+      padding: 30px 16px;
+      border-bottom: 5px solid #ffb3b3;
+    }
 
-    input[type="text"] { padding: 12px; width: 100%; margin-top: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
-    button { padding: 12px 20px; background-color: #b3001b; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 10px; width: 100%; }
-    button:hover { background-color: #990017; }
+    header h1 { margin: 0; font-size: 26px; }
+    header h2 { margin-top: 8px; font-size: 18px; }
+    header p { margin-top: 5px; font-size: 14px; }
 
-    #hasilKelulusan { font-size: 18px; margin-top: 15px; text-align: center; }
-    ul { padding-left: 20px; }
+    .section {
+      max-width: 700px;
+      margin: 16px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
 
-    .kontak p { margin: 5px 0; }
-    footer { text-align: center; padding: 20px; background-color: #5c0011; color: white; margin-top: 40px; }
+    .section h3 {
+      text-align: center;
+      color: #b3001b;
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      font-size: 16px;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .countdown div {
+      background: #ff4d4d;
+      color: white;
+      padding: 12px 8px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      width: 100%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #b3001b, #ff4d4d);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    button:hover { opacity: 0.9; }
+
+    #hasilKelulusan {
+      font-size: 16px;
+      margin-top: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    ul { padding-left: 18px; }
+
+    .kontak p { margin: 6px 0; font-size: 14px; }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      background-color: #5c0011;
+      color: white;
+      margin-top: 30px;
+      font-size: 13px;
+    }
+
+    @media (min-width: 768px) {
+      header h1 { font-size: 36px; }
+      header h2 { font-size: 24px; }
+      .countdown { grid-template-columns: repeat(4, 1fr); }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Pengumuman Kelulusan</h1>
     <h2>SD Negeri 17 Gunung Pangilun</h2>
@@ -37,13 +117,17 @@
   <div class="section">
     <h3>Pengumuman Akan Dibuka Dalam:</h3>
     <div class="countdown" id="countdown"></div>
-    <p style="text-align:center;">Pengumuman dibuka pada tanggal <strong>2 Juni 2026 pukul 18:00 WIB</strong></p>
+    <p style="text-align:center; font-size:14px;">
+      Pengumuman dibuka pada tanggal <strong>2 Juni 2026 pukul 18:00 WIB</strong>
+    </p>
   </div>
 
   <div class="section">
     <h3>Informasi Penting</h3>
-    <p>Setelah pengumuman dibuka, siswa dapat melihat hasil kelulusan dengan memasukkan Nomor Induk Siswa Nasional (NISN) pada form yang tersedia di bawah.</p>
-    <ul>
+    <p style="font-size:14px;">
+      Setelah pengumuman dibuka, siswa dapat melihat hasil kelulusan dengan memasukkan Nomor Induk Siswa Nasional (NISN) pada form yang tersedia di bawah.
+    </p>
+    <ul style="font-size:14px;">
       <li>Pastikan Anda memiliki NISN yang benar</li>
       <li>Hasil kelulusan bersifat final dan tidak dapat diganggu gugat</li>
     </ul>
@@ -64,20 +148,20 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Nurhamdani. Hak Cipta.</p>
+    <p>&copy; 2026 SD Negeri 17 Gunung Pangilun</p>
   </footer>
 
   <script>
-    const countdownDate = new Date("June 2, 2025 18:00:00").getTime();
+    const countdownDate = new Date("2026-06-02T18:00:00+07:00").getTime();
     const countdownEl = document.getElementById("countdown");
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
 
-      if (distance < 0) {
+      if (distance <= 0) {
         clearInterval(interval);
-        countdownEl.innerHTML = "Pengumuman Telah Dibuka";
+        countdownEl.innerHTML = "<div style='grid-column:1/-1'>Pengumuman Telah Dibuka</div>";
         return;
       }
 
@@ -95,56 +179,54 @@
     }, 1000);
 
     const dataKelulusan = {
-  "3138835069": "ADITYA BUDIMAN",
-  "0139885444": "ADITYA SAPUTRA",
-  "3149306534": "AHMAD HABIBI",
-  "3135968371": "AIDAN NAUFAL KINATRA",
-  "3138032745": "AIDHILA DHEA KIRANA",
-  "0142882527": "AISYAH AYUDIA INARA",
-  "0143394739": "AKMAL MEDIAN ZUMI",
-  "0143295041": "ALYA NASYITHA ADELINA WIJAYA",
-  "0135063454": "ANNISHA APRILIA SAMHADI",
-  "0144747996": "ARUMI TRIWILLA PUTRI",
-  "0135996222": "AURA ZASKIA RAHMAN",
-  "0133143622": "BINTANG SATRIA",
-  "0114656948": "CAHAYA PUAN SALSABILA",
-  "3136722061": "FATHAN HAYAKA ADHYASTA",
-  "3139032397": "HANIFA HINDRA",
-  "0134416817": "HANIFAH NABILLA",
-  "3130792147": "KAYLA NAJWA PUTRI",
-  "0131813147": "MAALIK ATHALLAH",
-  "3148485496": "MARISA AZHARA ZOYA",
-  "0142835176": "MUHAMMAD AZZAM",
-  "3137001070": "MUHAMMAD ROZAAQ AQILA PRANAJA",
-  "0139644840": "NINDY YURIZANTI PUTRI",
-  "0139649579": "NUR AINI FADHILAH",
-  "3136910791": "RAVELO ALKHALIFI BUDIALEN",
-  "3129874030": "RENDY OKTA RIANDA",
-  "3136928013": "SALSA TALITA AMBRIN",
-  "0137598326": "SYAFIRA TRI AGUSTIN",
-  "3142753127": "VIO KINARA"
+      "3138835069": "ADITYA BUDIMAN",
+      "0139885444": "ADITYA SAPUTRA",
+      "3149306534": "AHMAD HABIBI",
+      "3135968371": "AIDAN NAUFAL KINATRA",
+      "3138032745": "AIDHILA DHEA KIRANA",
+      "0142882527": "AISYAH AYUDIA INARA",
+      "0143394739": "AKMAL MEDIAN ZUMI",
+      "0143295041": "ALYA NASYITHA ADELINA WIJAYA",
+      "0135063454": "ANNISHA APRILIA SAMHADI",
+      "0144747996": "ARUMI TRIWILLA PUTRI",
+      "0135996222": "AURA ZASKIA RAHMAN",
+      "0133143622": "BINTANG SATRIA",
+      "0114656948": "CAHAYA PUAN SALSABILA",
+      "3136722061": "FATHAN HAYAKA ADHYASTA",
+      "3139032397": "HANIFA HINDRA",
+      "0134416817": "HANIFAH NABILLA",
+      "3130792147": "KAYLA NAJWA PUTRI",
+      "0131813147": "MAALIK ATHALLAH",
+      "3148485496": "MARISA AZHARA ZOYA",
+      "0142835176": "MUHAMMAD AZZAM",
+      "3137001070": "MUHAMMAD ROZAAQ AQILA PRANAJA",
+      "0139644840": "NINDY YURIZANTI PUTRI",
+      "0139649579": "NUR AINI FADHILAH",
+      "3136910791": "RAVELO ALKHALIFI BUDIALEN",
+      "3129874030": "RENDY OKTA RIANDA",
+      "3136928013": "SALSA TALITA AMBRIN",
+      "0137598326": "SYAFIRA TRI AGUSTIN",
+      "3142753127": "VIO KINARA"
     };
 
     function cekKelulusan() {
       const nisn = document.getElementById("nisnInput").value.trim();
-      const nama = dataKelulusan[nisn];
       const hasilEl = document.getElementById("hasilKelulusan");
 
       if (new Date().getTime() < countdownDate) {
-        hasilEl.innerText = "Pengumuman belum dibuka.";
-        hasilEl.style.color = "black";
+        hasilEl.innerText = "⏳ Pengumuman belum dibuka.";
+        hasilEl.style.color = "#333";
         return;
       }
 
-      if (nama) {
-        hasilEl.innerText = `Selamat ${nama}, Anda dinyatakan LULUS.`;
+      if (dataKelulusan[nisn]) {
+        hasilEl.innerText = `🎉 Selamat ${dataKelulusan[nisn]}, Anda dinyatakan LULUS.`;
         hasilEl.style.color = "green";
       } else {
-        hasilEl.innerText = "NISN tidak ditemukan.";
-        hasilEl.style.color = "black";
+        hasilEl.innerText = "❌ NISN tidak ditemukan. Periksa kembali.";
+        hasilEl.style.color = "red";
       }
     }
   </script>
 </body>
 </html>
-
